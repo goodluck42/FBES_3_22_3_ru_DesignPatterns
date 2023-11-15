@@ -7,6 +7,8 @@
 
 // Composition
 
+using System.Collections;
+
 {
     A obj = new A();
 }
