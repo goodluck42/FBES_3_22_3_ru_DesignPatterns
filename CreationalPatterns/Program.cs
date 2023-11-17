@@ -1,15 +1,35 @@
-﻿using CreationalPatterns.Factory;
+﻿using System.Threading.Channels;
+using CreationalPatterns.Builder;
+using CreationalPatterns.Factory;
 using CreationalPatterns.Singleton;
 
-IItemFactory laptopFactory = new LaptopFactory();
-IItemFactory phoneFactory = new PhoneFactory();
 
-var items = new List<IItem>();
+var builder = new PCBuilder();
 
-items.Add(laptopFactory.Create());
-items.Add(phoneFactory.Create());
+builder.SetSocket("1155");
+builder.SetGpu(6);
+builder.SetPsu(600);
+builder.SetSsd(500);
+builder.SetRam(16);
+builder.SetCpu(4);
 
-foreach (var item in items)
-{
-    item.DisplayInfo();
-}
+var pc = builder.Build();
+
+Console.WriteLine(pc.ToString());
+
+// {
+//
+//
+//     IItemFactory laptopFactory = new LaptopFactory();
+//     IItemFactory phoneFactory = new PhoneFactory();
+//
+//     var items = new List<IItem>();
+//
+//     items.Add(laptopFactory.Create());
+//     items.Add(phoneFactory.Create());
+//
+//     foreach (var item in items)
+//     {
+//         item.DisplayInfo();
+//     }
+// }
