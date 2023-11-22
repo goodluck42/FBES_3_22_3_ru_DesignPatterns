@@ -12,8 +12,8 @@ Notifier decorator = notifierBuilder
 
 decorator.Notify(new Message()
 {
-    From = "skiba_al@itstep.edu.az",
-    To = "faar.haag@gmail.com",
+    From = "skiba_al@itstep.edu.az", // Your mail
+    To = "faar.haag@gmail.com", // Receiver
     Text = @"Farhad joke count: 1"
 });
 
@@ -72,7 +72,7 @@ public class MailNotifier : NotifierDecorator
 {
     public MailNotifier(Notifier? notifier = null) : base(notifier)
     {
-        Console.WriteLine("Created!");
+        
     }
 
     public override void Notify(Message message)
@@ -104,18 +104,6 @@ public class MailNotifier : NotifierDecorator
     }
 }
 
-
-public class GmailNotifier : NotifierDecorator
-{
-    public GmailNotifier(Notifier? notifier) : base(notifier)
-    {
-    }
-
-    public override void Notify(Message message)
-    {
-        throw new NotImplementedException();
-    }
-}
 // Builder for Decorator pattern
 
 public class NotifierBuilder
