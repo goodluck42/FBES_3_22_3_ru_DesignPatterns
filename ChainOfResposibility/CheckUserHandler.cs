@@ -18,6 +18,7 @@ public class CheckUserHandler : BasePostHandler
         
         User? u = _db.GetUser(post.User.Login);
         
+        
         if (u != null && u.Password == post.User.Password)
         {
             Next?.Handle(post);
