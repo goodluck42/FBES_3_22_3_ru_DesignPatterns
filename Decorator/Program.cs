@@ -34,7 +34,7 @@ public abstract class NotifierDecorator : Notifier
 {
     protected NotifierDecorator? BaseNotifier;
 
-    public NotifierDecorator(NotifierDecorator? notifier)
+    protected NotifierDecorator(NotifierDecorator? notifier)
     {
         BaseNotifier = notifier;
     }
