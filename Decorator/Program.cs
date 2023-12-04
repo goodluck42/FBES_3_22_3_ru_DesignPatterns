@@ -32,9 +32,9 @@ public abstract class Notifier
 
 public abstract class NotifierDecorator : Notifier
 {
-    protected Notifier? BaseNotifier;
+    protected NotifierDecorator? BaseNotifier;
 
-    public NotifierDecorator(Notifier? notifier)
+    public NotifierDecorator(NotifierDecorator? notifier)
     {
         BaseNotifier = notifier;
     }
@@ -42,7 +42,7 @@ public abstract class NotifierDecorator : Notifier
 
 public class FileNotifier : NotifierDecorator
 {
-    public FileNotifier(Notifier? notifier = null) : base(notifier)
+    public FileNotifier(NotifierDecorator? notifier = null) : base(notifier)
     {
     }
 
@@ -56,7 +56,7 @@ public class FileNotifier : NotifierDecorator
 
 public class ConsoleNotifier : NotifierDecorator
 {
-    public ConsoleNotifier(Notifier? notifier = null) : base(notifier)
+    public ConsoleNotifier(NotifierDecorator? notifier = null) : base(notifier)
     {
     }
 
@@ -70,7 +70,7 @@ public class ConsoleNotifier : NotifierDecorator
 
 public class MailNotifier : NotifierDecorator
 {
-    public MailNotifier(Notifier? notifier = null) : base(notifier)
+    public MailNotifier(NotifierDecorator? notifier = null) : base(notifier)
     {
         
     }
