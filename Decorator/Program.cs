@@ -1,6 +1,14 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Reflection;
+using System.Linq;
+
+
+var collection = new List<int> { 10, 20, 30, -10, -20, -30 };
+
+var result = (from item in collection where item > 0 select item).ToList();
+
+result.ForEach(Console.WriteLine);
 
 var notifierBuilder = new NotifierBuilder();
 
